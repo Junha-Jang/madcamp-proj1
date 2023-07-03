@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    App(modifier = Modifier.fillMaxSize())
+                    App()
                 }
             }
         }
@@ -38,16 +38,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun App(modifier: Modifier = Modifier) {
+fun App() {
     var index by remember { mutableStateOf(1) }
 
     Column(
-        modifier = modifier
+        modifier = Modifier.fillMaxSize()
     ) {
         when(index) {
-            1 -> Tab1Screen(modifier = modifier)
-            2 -> Tab2Screen(modifier = modifier)
-            3 -> Tab3Screen(modifier = modifier)
+            1 -> Tab1Screen(modifier = Modifier.weight(1f))
+            2 -> Tab2Screen(modifier = Modifier.weight(1f))
+            3 -> Tab3Screen(modifier = Modifier.weight(1f))
         }
         Row(
             modifier = Modifier.fillMaxWidth()
@@ -97,6 +97,6 @@ fun NavButton(
 @Composable
 fun AppPreview() {
     Madcamp_proj1Theme {
-        App(modifier = Modifier.fillMaxSize())
+        App()
     }
 }
