@@ -51,7 +51,7 @@ fun Tab2ScreenPreview() {
 }
 
 @Composable
-private fun GalleryImageGrid(
+internal fun GalleryImageGrid(
     galleryImageList: List<GalleryImage>,
     modifier: Modifier = Modifier,
 ) {
