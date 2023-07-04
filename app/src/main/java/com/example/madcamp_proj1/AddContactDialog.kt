@@ -23,6 +23,9 @@ fun AddContactDialog(
 ) {
     var name by remember { mutableStateOf("") }
     var number by remember { mutableStateOf("") }
+    val isInputValid = remember(name, number) {
+        name.isNotBlank() && number.isNotBlank()
+    }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -33,21 +36,25 @@ fun AddContactDialog(
                     value = name,
                     onValueChange = { name = it },
                     label = { Text(text = "이름") },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    isError = name.isBlank()
                 )
                 OutlinedTextField(
                     value = number,
                     onValueChange = { number = it },
                     label = { Text(text = "전화번호") },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    isError = number.isBlank()
                 )
             }
         },
         confirmButton = {
             Button(
                 onClick = {
-                    onComplete(name, number)
-                    onDismiss()
+                    if (isInputValid) {
+                        onComplete(name, number)
+                        onDismiss()
+                    }
                 }
             ) {
                 Text(text = "Complete")

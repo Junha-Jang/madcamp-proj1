@@ -79,7 +79,10 @@ fun Tab1Screen(modifier: Modifier = Modifier) {
                 )
             }
 
-            Divider(color = Color.LightGray, thickness = 1.dp)
+            Divider(
+                color = Color.LightGray,
+                thickness = 2.dp,
+                modifier = Modifier.padding(horizontal = 10.dp))
 
             LazyColumn(modifier = Modifier.weight(1f)) {
                 items(contacts.filter {
@@ -94,8 +97,13 @@ fun Tab1Screen(modifier: Modifier = Modifier) {
                             .clickable {
                                 selectedContact = contact
                                 showContactDialog = true
-                            }
+                            },
+                        color = Color.Black
                     )
+                    Divider(
+                        color = Color.LightGray,
+                        thickness = 1.dp,
+                        modifier = Modifier.padding(horizontal = 10.dp))
                 }
             }
 
