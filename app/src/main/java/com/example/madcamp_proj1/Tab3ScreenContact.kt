@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -32,10 +30,11 @@ import com.example.madcamp_proj1.model.GalleryImage
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Tab3ScreenContact(modifier: Modifier = Modifier) {
+fun Tab3ScreenContact(modifier: Modifier = Modifier): List<GalleryImage> {
 
     val images = remember { Datasource().loadGalleryImages() }
     var query by remember { mutableStateOf("") }
+    var finalResult: List<GalleryImage> = remember { listOf() }
 
     Box(modifier = modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxSize()) {
@@ -72,35 +71,14 @@ fun Tab3ScreenContact(modifier: Modifier = Modifier) {
             }
 
             Divider(color = Color.LightGray, thickness = 1.dp)
-            LazyColumn(modifier = Modifier.weight(1f)) {
-                items(images.filter {
-                    val sortedNameList = it.nameList.sorted()
-                    val sortedQuery = query.split(",").map { it.trim() }.sorted()
-                    sortedQuery.any { name -> sortedNameList.contains(name)
-                    } || it.time.contains(query.trim())
-                }) { image ->
-                    ImageCard(image = image)
-                }
+
+            finalResult = images.filter {
+                val sortedNameList = it.nameList.sorted()
+                val sortedQuery = query.split(",").map { it.trim() }.sorted()
+                sortedQuery.any { name -> sortedNameList.contains(name)
+                } || it.time.contains(query.trim())
             }
         }
     }
+    return finalResult
 }
-
-@Composable
-fun ImageCard(image: GalleryImage) {
-    Column {
-        Text(
-            text = "Resource ID: ${image.imageResourceId}",
-            modifier = Modifier.padding(8.dp)
-        )
-        Text(
-            text = image.nameList.sorted().joinToString(),
-            modifier = Modifier.padding(8.dp)
-        )
-        Text(
-            text = image.time,
-            modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
