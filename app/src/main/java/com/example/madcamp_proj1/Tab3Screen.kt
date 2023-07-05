@@ -26,6 +26,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,7 +43,7 @@ fun Tab3Screen(modifier: Modifier = Modifier) {
     var queryList: MutableList<String> by remember { mutableStateOf(mutableStateListOf()) }
 
     Box(modifier = modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(modifier = modifier) {
             Row(modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 4.dp)
@@ -76,6 +77,7 @@ fun Tab3Screen(modifier: Modifier = Modifier) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 1.dp, bottom = 1.dp, start = 4.dp, end = 4.dp),
+                    textStyle = TextStyle(color = Color.Black),
                     shape = RoundedCornerShape(30),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
                         focusedBorderColor = Color.LightGray,
@@ -116,7 +118,7 @@ fun Tab3Screen(modifier: Modifier = Modifier) {
 
                 GalleryImageGrid(
                     galleryImageList = filteredGalleryImageList,
-                    modifier = modifier
+                    modifier = modifier.padding(start = 8.dp, end = 8.dp)
                 )
             }
         }
