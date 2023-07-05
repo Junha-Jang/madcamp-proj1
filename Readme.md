@@ -10,8 +10,11 @@
 ## Team
 
 :frowning_man: __장준하__ : KAIST 20, CS
+<br/>
     - Tab 2, Tab 3
+<br/>
 :raising_hand_man: __전지민__ : GIST 21, CS
+<br/>
     - Tab 1, Tab 3
 
 <br/>
