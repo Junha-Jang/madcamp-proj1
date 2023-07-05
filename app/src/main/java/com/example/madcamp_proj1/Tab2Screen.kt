@@ -75,7 +75,11 @@ internal fun GalleryImageGrid(
                                 colNumber = colNumber,
                                 modifier = Modifier
                                     .weight(1f)
-                                    .clickable(onClick = { selectedIndex = imageIndex })
+                                    .clickable(
+                                        onClick = {
+                                            if (imageIndex < galleryImageList.size) selectedIndex = imageIndex
+                                        }
+                                    )
                             )
                         }
                     }
@@ -175,20 +179,13 @@ fun GalleryImageCard(
     Card(modifier = modifier.padding(2.dp)) {
         Column {
             Image(
-                painter = painterResource(galleryImage.imageResourceId ?: R.drawable.empty)  ,
-                contentDescription = null,//stringResource(galleryImage.stringResourceId),
+                painter = painterResource(galleryImage.imageResourceId ?: R.drawable.white),
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height((360 / colNumber).dp)
             )
-            /*
-            Text(
-                text = stringResource(affirmation.stringResourceId),
-                modifier = Modifier.padding(16.dp),
-                style = MaterialTheme.typography.headlineSmall
-            )
-            */
         }
     }
 }
