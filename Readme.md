@@ -22,9 +22,9 @@
 ##### Tab 1 : Contact
 
 <p float="left">
-  <img src="https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/265f30e1-e626-4d76-bfbe-5c1dee8f4e85" width="100" />
-  <img src="https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/a8882ddc-88d1-447d-a11a-e14710ee84ef" width="100" /> 
-  <img src="https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/e78c46d6-5a82-4694-b009-d9c9e0d3d1db" width="100" />
+  <img src="https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/265f30e1-e626-4d76-bfbe-5c1dee8f4e85" width="300" />
+  <img src="https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/a8882ddc-88d1-447d-a11a-e14710ee84ef" width="300" /> 
+  <img src="https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/e78c46d6-5a82-4694-b009-d9c9e0d3d1db" width="300" />
 </p>
 
 
