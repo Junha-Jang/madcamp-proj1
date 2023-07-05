@@ -41,10 +41,31 @@ import com.example.madcamp_proj1.model.GalleryImage
 
 @Composable
 fun Tab2Screen(modifier: Modifier = Modifier) {
-    GalleryImageGrid(
-        galleryImageList = Datasource().loadGalleryImages(),
-        modifier = modifier
-    )
+    Column(modifier = modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp)) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
+            Text(
+                text = "갤러리",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            )
+        }
+
+        Divider(
+            color = Color.LightGray,
+            thickness = 2.dp,
+            modifier = Modifier.padding(horizontal = 2.dp)
+        )
+
+        GalleryImageGrid(
+            galleryImageList = Datasource().loadGalleryImages(),
+            modifier = modifier
+        )
+    }
 }
 
 @Preview(showBackground = true)
@@ -61,51 +82,31 @@ internal fun GalleryImageGrid(
     var colNumber: Int by remember { mutableStateOf(3) }
     var selectedIndex: Int? by remember { mutableStateOf(null) }
 
-    Box(modifier = modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp)) {
-        Column() {
-            Row(modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
-            ){
-                Text(
-                    text = "갤러리",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
-            }
-
-            Divider(
-                color = Color.LightGray,
-                thickness = 2.dp,
-                modifier = Modifier.padding(horizontal = 2.dp)
-            )
-
-            LazyColumn(
-                modifier = Modifier.fillMaxSize()
-            ) {
-                item { Spacer(modifier = Modifier.size(8.dp)) }
-                item {
-                    for (i in galleryImageList.indices step colNumber) {
-                        Row(modifier = Modifier.fillMaxWidth()) {
-                            for (j in 0 until colNumber) {
-                                val imageIndex: Int = i + j
-                                val galleryImage: GalleryImage =
-                                    if (imageIndex < galleryImageList.size) galleryImageList[imageIndex]
-                                    else GalleryImage(null)
-                                GalleryImageCard(
-                                    galleryImage = galleryImage,
-                                    colNumber = colNumber,
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .clickable(
-                                            onClick = {
-                                                if (imageIndex < galleryImageList.size) selectedIndex =
-                                                    imageIndex
-                                            }
-                                        )
-                                )
-                            }
+    Box {
+        LazyColumn(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            item { Spacer(modifier = Modifier.size(8.dp)) }
+            item {
+                for (i in galleryImageList.indices step colNumber) {
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        for (j in 0 until colNumber) {
+                            val imageIndex: Int = i + j
+                            val galleryImage: GalleryImage =
+                                if (imageIndex < galleryImageList.size) galleryImageList[imageIndex]
+                                else GalleryImage(null)
+                            GalleryImageCard(
+                                galleryImage = galleryImage,
+                                colNumber = colNumber,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .clickable(
+                                        onClick = {
+                                            if (imageIndex < galleryImageList.size) selectedIndex =
+                                                imageIndex
+                                        }
+                                    )
+                            )
                         }
                     }
                 }
