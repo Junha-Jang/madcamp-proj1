@@ -9,15 +9,15 @@
 
 ## Team
 
-:ok_man: __장준하__ ( KAIST 20, CS ) : Tab 2, Tab 3 
+:bust_in_silhouette: __장준하__ ( KAIST 20, CS ) : Tab 2, Tab 3 
 <br/>
 
-:sassy_man: __전지민__ ( GIST 21, CS ) : Tab 1, Tab 3
+:bust_in_silhouette: __전지민__ ( GIST 21, CS ) : Tab 1, Tab 3
 
 <br/>
 
 ## Components
-[ [__App Download__](https://github.com/<your_username>/<your_repo>/raw/main/yourfile.apk) 어플리케이션을 실행해보세요 ]
+[ [__App Download__](https://github.com/<your_username>/<your_repo>/raw/main/yourfile.apk) : 어플리케이션을 실행해보세요 ]
 
 ##### Tab 1 : Contact
 
