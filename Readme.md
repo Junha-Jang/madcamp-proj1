@@ -1,7 +1,7 @@
 ![KakaoTalk_20230705_152044768](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/8be240f9-e758-427d-abcd-d0cdb6d40fa9)
 
 # Frontier
-※ 2023 몰입캠프 __프로젝트 1__ (2023.06.29. ~ 2023.07.05.) ※
+※ __2023 몰입캠프 프로젝트 1__ (2023.06.29. ~ 2023.07.05.) ※
 
 > 이 프로젝트는 1주일 동안 [Compose 사용 시 알아야 하는 Android 기본사항](https://developer.android.com/courses/android-basics-compose/course?hl=ko) 의 Chapter 1 ~ 4.2 를 공부하여 개발했습니다.
 
