@@ -1,4 +1,4 @@
-![Header Image](![Kacrop](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/9cac8f2a-8262-4839-ae6e-d808e0df026a))
+![Kacrop](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/9cac8f2a-8262-4839-ae6e-d808e0df026a)
 
 # Frontier
 ※ 2023 몰입캠프 __프로젝트 1__ (2023.06.29. ~ 2023.07.05.) ※
