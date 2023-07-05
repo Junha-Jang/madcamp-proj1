@@ -5,8 +5,7 @@
 
 > 이 프로젝트는 1주일 동안 [Compose 사용 시 알아야 하는 Android 기본사항](https://developer.android.com/courses/android-basics-compose/course?hl=ko) 의 Chapter 1 ~ 4.2 를 공부하여 개발했습니다.
 
-
-
+<br/>
 
 ## Team
 
@@ -15,8 +14,7 @@
 - __전지민__ : GIST 21, CS
     - Tab 1, Tab 3
 
-
-
+<br/>
 
 ## Components
 [__App Download__](https://github.com/<your_username>/<your_repo>/raw/main/yourfile.apk) : 어플리케이션을 실행해보세요
@@ -38,8 +36,7 @@
 사람 이름, 사진을 촬영한 날짜로 갤러리에 저장된 사진을 검색할 수 있습니다.
 여러명이 단체로 촬영한 사진도 검색이 가능하며, 검색 기록이 화면에 표시됩니다.
 
-
-
+<br/>
 
 ## Tech Stacks
 
