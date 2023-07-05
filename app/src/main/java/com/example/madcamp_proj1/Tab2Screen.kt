@@ -58,7 +58,7 @@ internal fun GalleryImageGrid(
     var colNumber: Int by remember { mutableStateOf(3) }
     var selectedIndex: Int? by remember { mutableStateOf(null) }
 
-    Box(modifier = modifier.padding(6.dp)) {
+    Box(modifier = modifier.padding(top = 6.dp, start = 6.dp, end = 6.dp)) {
         LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
