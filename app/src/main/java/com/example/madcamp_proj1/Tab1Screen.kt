@@ -8,16 +8,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.LocalContentColor
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -28,8 +27,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
@@ -50,8 +52,18 @@ fun Tab1Screen(modifier: Modifier = Modifier) {
     var showContactDialog by remember { mutableStateOf(false) }
 
     Box(modifier = modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize()) {
-
+        Column(modifier = modifier) {
+            Row(modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 4.dp)
+            ){
+                Text(
+                    text = "연락처",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
+            }
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -70,6 +82,7 @@ fun Tab1Screen(modifier: Modifier = Modifier) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 1.dp, bottom = 1.dp, start = 4.dp, end = 4.dp),
+                    textStyle = TextStyle(color = Color.Black),
                     shape = RoundedCornerShape(30),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
                         focusedBorderColor = Color.LightGray,
@@ -98,7 +111,7 @@ fun Tab1Screen(modifier: Modifier = Modifier) {
                                 selectedContact = contact
                                 showContactDialog = true
                             },
-                        color = Color.Black
+                        color = Color.DarkGray
                     )
                     Divider(
                         color = Color.LightGray,
