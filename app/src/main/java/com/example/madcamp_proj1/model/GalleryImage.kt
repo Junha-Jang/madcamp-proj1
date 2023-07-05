@@ -1,10 +1,9 @@
 package com.example.madcamp_proj1.model
 
 import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import java.util.Date
 
 data class GalleryImage(
-    @DrawableRes val imageResourceId: Int?
-    //@StringRes val stringResourceId: Int
+    @DrawableRes val imageResourceId: Int?,
+    val nameList: List<String> = listOf(),
+    val time: String = "2023/07/05"
 )

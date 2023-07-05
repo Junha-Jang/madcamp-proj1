@@ -17,7 +17,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -30,6 +32,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,10 +41,31 @@ import com.example.madcamp_proj1.model.GalleryImage
 
 @Composable
 fun Tab2Screen(modifier: Modifier = Modifier) {
-    GalleryImageGrid(
-        galleryImageList = Datasource().loadGalleryImages(),
-        modifier = modifier
-    )
+    Column(modifier = modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp)) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
+            Text(
+                text = "갤러리",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            )
+        }
+
+        Divider(
+            color = Color.LightGray,
+            thickness = 2.dp,
+            modifier = Modifier.padding(horizontal = 2.dp)
+        )
+
+        GalleryImageGrid(
+            galleryImageList = Datasource().loadGalleryImages(),
+            modifier = modifier
+        )
+    }
 }
 
 @Preview(showBackground = true)
@@ -51,17 +75,18 @@ fun Tab2ScreenPreview() {
 }
 
 @Composable
-private fun GalleryImageGrid(
+internal fun GalleryImageGrid(
     galleryImageList: List<GalleryImage>,
     modifier: Modifier = Modifier,
 ) {
     var colNumber: Int by remember { mutableStateOf(3) }
     var selectedIndex: Int? by remember { mutableStateOf(null) }
 
-    Box(modifier = modifier.padding(6.dp)) {
+    Box(modifier = modifier) {
         LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
+            item { Spacer(modifier = Modifier.size(8.dp)) }
             item {
                 for (i in galleryImageList.indices step colNumber) {
                     Row(modifier = Modifier.fillMaxWidth()) {
@@ -75,7 +100,12 @@ private fun GalleryImageGrid(
                                 colNumber = colNumber,
                                 modifier = Modifier
                                     .weight(1f)
-                                    .clickable(onClick = { selectedIndex = imageIndex })
+                                    .clickable(
+                                        onClick = {
+                                            if (imageIndex < galleryImageList.size) selectedIndex =
+                                                imageIndex
+                                        }
+                                    )
                             )
                         }
                     }
@@ -83,21 +113,22 @@ private fun GalleryImageGrid(
             }
         }
         Row(
-            verticalAlignment = Alignment.Bottom,
-            horizontalArrangement = Arrangement.End,
+            //verticalAlignment = Alignment.Bottom,
+            //horizontalArrangement = Arrangement.End,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(6.dp)
+                //.fillMaxSize()
+                .padding(end = 8.dp, bottom = 16.dp)
+                .align(Alignment.BottomEnd)
         ) {
             ExtendedFloatingActionButton(
                 onClick = { if (colNumber > 1) colNumber-- },
                 modifier = Modifier
                     .width(60.dp)
-                    .height(40.dp)
+                    .height(60.dp)
             ) {
-                Text(
-                    text = "+",
-                    fontSize = 20.sp
+                Icon(
+                    painter = painterResource(R.drawable.zoomin),
+                    contentDescription = null
                 )
             }
             Spacer(modifier = Modifier.size(10.dp))
@@ -105,11 +136,11 @@ private fun GalleryImageGrid(
                 onClick = { if (colNumber < 8) colNumber++ },
                 modifier = Modifier
                     .width(60.dp)
-                    .height(40.dp)
+                    .height(60.dp)
             ) {
-                Text(
-                    text = "-",
-                    fontSize = 20.sp
+                Icon(
+                    painter = painterResource(R.drawable.zoomout),
+                    contentDescription = null
                 )
             }
         }
@@ -175,20 +206,13 @@ fun GalleryImageCard(
     Card(modifier = modifier.padding(2.dp)) {
         Column {
             Image(
-                painter = painterResource(galleryImage.imageResourceId ?: R.drawable.ic_task_completed)  ,
-                contentDescription = null,//stringResource(galleryImage.stringResourceId),
+                painter = painterResource(galleryImage.imageResourceId ?: R.drawable.white),
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height((360 / colNumber).dp)
             )
-            /*
-            Text(
-                text = stringResource(affirmation.stringResourceId),
-                modifier = Modifier.padding(16.dp),
-                style = MaterialTheme.typography.headlineSmall
-            )
-            */
         }
     }
 }
