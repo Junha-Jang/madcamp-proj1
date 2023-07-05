@@ -175,7 +175,7 @@ fun GalleryImageCard(
     Card(modifier = modifier.padding(2.dp)) {
         Column {
             Image(
-                painter = painterResource(galleryImage.imageResourceId ?: R.drawable.ic_task_completed)  ,
+                painter = painterResource(galleryImage.imageResourceId ?: R.drawable.empty)  ,
                 contentDescription = null,//stringResource(galleryImage.stringResourceId),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
