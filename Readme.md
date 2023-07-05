@@ -21,9 +21,11 @@
 
 ##### Tab 1 : Contact
 
+<p float="left">
 ![KakaoTalk_20230705_163823574_01](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/21faf63c-2ff5-42b6-b7f4-10f2b5b31e1a)
 ![KakaoTalk_20230705_163823574_02](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/7ac3258c-4342-49cc-b049-7c68caec9ea2)
 ![KakaoTalk_20230705_163823574_03](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/4e4c1736-10bd-4e12-ae95-a0e61937a7ba)
+</p>
 
 연락처를 클릭하면 자세한 정보와 함께 수정이 가능합니다. 우측 하단 버튼을 클릭해 새로운 연락처를 추가할 수 있습니다.
 빈 공백은 저장이 불가능합니다.
