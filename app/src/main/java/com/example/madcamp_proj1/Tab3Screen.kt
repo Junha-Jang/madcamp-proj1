@@ -26,8 +26,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.madcamp_proj1.data.Datasource
 
 
@@ -41,7 +43,17 @@ fun Tab3Screen(modifier: Modifier = Modifier) {
 
     Box(modifier = modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxSize()) {
-
+            Row(modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 4.dp)
+            ){
+                Text(
+                    text = "그룹",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
+            }
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -72,7 +84,11 @@ fun Tab3Screen(modifier: Modifier = Modifier) {
                     singleLine = true
                 )
             }
-            Divider(color = Color.LightGray, thickness = 1.dp)
+
+            Divider(
+                color = Color.LightGray,
+                thickness = 2.dp,
+                modifier = Modifier.padding(horizontal = 10.dp))
 
             val filteredGalleryImageList = images.filter { it ->
                 val sortedNameList = it.nameList.sorted()
