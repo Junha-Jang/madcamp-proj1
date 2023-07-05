@@ -6,7 +6,7 @@
 > 이 프로젝트는 1주일 동안 [Compose 사용 시 알아야 하는 Android 기본사항](https://developer.android.com/courses/android-basics-compose/course?hl=ko) 의 Chapter 1 ~ 4.2 를 공부하여 개발했습니다.
 
 ## Team
-----
+
 - __장준하__ : KAIST 20, CS
     - Tab 2, Tab 3
 - __전지민__ : GIST 21, CS
@@ -33,7 +33,7 @@
 여러명이 단체로 촬영한 사진도 검색이 가능하며, 검색 기록이 화면에 표시됩니다.
 
 ## Tech Stacks
-----
+
 ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
