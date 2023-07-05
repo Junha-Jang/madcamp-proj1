@@ -17,7 +17,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -30,6 +32,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -58,50 +61,73 @@ internal fun GalleryImageGrid(
     var colNumber: Int by remember { mutableStateOf(3) }
     var selectedIndex: Int? by remember { mutableStateOf(null) }
 
-    Box(modifier = modifier.padding(top = 6.dp, start = 6.dp, end = 6.dp)) {
-        LazyColumn(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            item {
-                for (i in galleryImageList.indices step colNumber) {
-                    Row(modifier = Modifier.fillMaxWidth()) {
-                        for (j in 0 until colNumber) {
-                            val imageIndex: Int = i + j
-                            val galleryImage: GalleryImage =
-                                if (imageIndex < galleryImageList.size) galleryImageList[imageIndex]
-                                else GalleryImage(null)
-                            GalleryImageCard(
-                                galleryImage = galleryImage,
-                                colNumber = colNumber,
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .clickable(
-                                        onClick = {
-                                            if (imageIndex < galleryImageList.size) selectedIndex = imageIndex
-                                        }
-                                    )
-                            )
+    Box(modifier = modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp)) {
+        Column() {
+            Row(modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+            ){
+                Text(
+                    text = "갤러리",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
+            }
+
+            Divider(
+                color = Color.LightGray,
+                thickness = 2.dp,
+                modifier = Modifier.padding(horizontal = 2.dp)
+            )
+
+            LazyColumn(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                item { Spacer(modifier = Modifier.size(8.dp)) }
+                item {
+                    for (i in galleryImageList.indices step colNumber) {
+                        Row(modifier = Modifier.fillMaxWidth()) {
+                            for (j in 0 until colNumber) {
+                                val imageIndex: Int = i + j
+                                val galleryImage: GalleryImage =
+                                    if (imageIndex < galleryImageList.size) galleryImageList[imageIndex]
+                                    else GalleryImage(null)
+                                GalleryImageCard(
+                                    galleryImage = galleryImage,
+                                    colNumber = colNumber,
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .clickable(
+                                            onClick = {
+                                                if (imageIndex < galleryImageList.size) selectedIndex =
+                                                    imageIndex
+                                            }
+                                        )
+                                )
+                            }
                         }
                     }
                 }
             }
         }
         Row(
-            verticalAlignment = Alignment.Bottom,
-            horizontalArrangement = Arrangement.End,
+            //verticalAlignment = Alignment.Bottom,
+            //horizontalArrangement = Arrangement.End,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(6.dp)
+                //.fillMaxSize()
+                .padding(end = 8.dp, bottom = 16.dp)
+                .align(Alignment.BottomEnd)
         ) {
             ExtendedFloatingActionButton(
                 onClick = { if (colNumber > 1) colNumber-- },
                 modifier = Modifier
                     .width(60.dp)
-                    .height(40.dp)
+                    .height(60.dp)
             ) {
-                Text(
-                    text = "+",
-                    fontSize = 20.sp
+                Icon(
+                    painter = painterResource(R.drawable.zoomin),
+                    contentDescription = null
                 )
             }
             Spacer(modifier = Modifier.size(10.dp))
@@ -109,11 +135,11 @@ internal fun GalleryImageGrid(
                 onClick = { if (colNumber < 8) colNumber++ },
                 modifier = Modifier
                     .width(60.dp)
-                    .height(40.dp)
+                    .height(60.dp)
             ) {
-                Text(
-                    text = "-",
-                    fontSize = 20.sp
+                Icon(
+                    painter = painterResource(R.drawable.zoomout),
+                    contentDescription = null
                 )
             }
         }
