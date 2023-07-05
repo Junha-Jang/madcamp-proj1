@@ -1,7 +1,6 @@
 ![Header Image](![Kacrop](https://github.com/Junha-Jang/madcamp-proj1/assets/91927189/9cac8f2a-8262-4839-ae6e-d808e0df026a))
 
 # Frontier
-----
 ※ 2023 몰입캠프 __프로젝트 1__ (2023.06.29. ~ 2023.07.05.) ※
 
 > 이 프로젝트는 1주일 동안 [Compose 사용 시 알아야 하는 Android 기본사항](https://developer.android.com/courses/android-basics-compose/course?hl=ko) 의 Chapter 1 ~ 4.2 를 공부하여 개발했습니다.
@@ -14,7 +13,6 @@
     - Tab 1, Tab 3
 
 ## Components
-----
 [__App Download__](https://github.com/<your_username>/<your_repo>/raw/main/yourfile.apk) : 어플리케이션을 실행해보세요
 
 ##### Tab 1 : Contact
