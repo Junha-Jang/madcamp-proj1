@@ -63,7 +63,7 @@ fun App() {
             Icons.Default.Menu,
             Icons.Default.Person
         )
-    val tabName: Array<String?> = arrayOf(null, "Contact", "Gallery", "Group")
+    val tabName: Array<String?> = arrayOf(null, "연락처", "갤러리", "그룹")
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
