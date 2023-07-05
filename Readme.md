@@ -9,9 +9,9 @@
 
 ## Team
 
-- __장준하__ : KAIST 20, CS
+:frowning_man: __장준하__ : KAIST 20, CS
     - Tab 2, Tab 3
-- __전지민__ : GIST 21, CS
+:raising_hand_man: __전지민__ : GIST 21, CS
     - Tab 1, Tab 3
 
 <br/>
