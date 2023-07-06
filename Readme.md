@@ -17,7 +17,7 @@
 <br/>
 
 ## Components
-[ [__App Download__](https://github.com/Junha-Jang/madcamp-proj1/blob/master/app-debug.apk) : 어플리케이션을 실행해보세요 ]
+[ [__App Download__](https://github.com/Junha-Jang/madcamp-proj1/blob/master/Frontier.apk) : 어플리케이션을 실행해보세요 ]
 
 ##### Tab 1 : Contact
 
